@@ -1,0 +1,1878 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="keywords" content="ZX-MA-CPE-100">
+    <meta name="description" content="ZX-MA-CPE-100">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <link rel="icon" href="assets/img/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" type="text/css" href="./confirmPlugin/css/xcConfirm.css" />
+    <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.i18n.min.js"></script>
+    <script type="text/javascript" src="./confirmPlugin/js/xcConfirm.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.request.js"></script>
+    <script type="text/javascript" src="assets/js/zxma.timer.js"></script>
+    <title i18n="head.title">泽辛5G路由 ZX-MA-CPE-100</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+
+    <div id="app" class="zxma-container">
+        <section class="zxma-content">
+            <div id="zxma_fixed" class="zxma-fixed" style="width: 1020px; height: 560px;">
+                <div id="zxma_setting" class="" style="margin: 0 auto;width: 1020px;height: auto;">
+
+                    <!-- caidan -->
+                    <div id="menu" class="zxma-menu-container" style="float:left;">
+                        <div id="menu_title1" class="zxma-menu-title" onclick="openMenu(this)">
+                            <a href="javascript:void(0);" style="padding-left: 20px;" i18n="setting.security">安全
+                            <div id="indicator1" class="zxma-menu-title-indicator indicator"></div>
+                        </a>
+                        </div>
+                        <div id="menu1" class="zxma-menu-item">
+                            <div class="zxma-submenu-item">
+                                <a href="javascript:void(0);" i18n="setting.securityfirewall" onclick="pointMenu('setting-security-firewall')">防火墙</a>
+                            </div>
+                            <li class="zxma-menu-divider"></li>
+                            <div class="zxma-submenu-item">
+                                <a href="javascript:void(0);" i18n="setting.securitydmz" onclick="pointMenu('setting-security-dmz')">DMZ设置</a>
+                            </div>
+                            <li class="zxma-menu-divider"></li>
+                            <div class="zxma-submenu-item">
+                                <a href="javascript:void(0);" i18n="setting.remote" onclick="pointMenu('setting-security-remote')">远程管理</a>
+                            </div>
+                            <li class="zxma-menu-divider"></li>
+                            <div class="zxma-submenu-item">
+                                <a href="javascript:void(0);" i18n="setting.securityportforward" onclick="pointMenu('setting-security-portforward')">端口转发</a>
+                            </div>
+                        </div>
+                        <li class="zxma-menu-divider"></li>
+                        <div id="menu_title2" class="zxma-menu-title" onclick="openMenu(this)">
+                            <a href="javascript:void(0);" style="padding-left: 20px;" i18n="setting.system">系统
+                            <div id="indicator2" class="zxma-menu-title-indicator indicator"></div>
+                        </a>
+                        </div>
+                        <div id="menu2" class="zxma-menu-item">
+                            <div class="zxma-submenu-item">
+                                <a href="javascript:void(0);" i18n="setting.systemdeviceinfo" onclick="pointMenu('setting-system-deviceinfo')">设备信息</a>
+                            </div>
+                            <!--
+                        <li class="zxma-menu-divider"></li>
+                        <div class="zxma-submenu-item">
+                            <a href="javascript:void(0);" i18n="setting.time.setting" onclick="pointMenu('setting-system-time')">时间设置</a>
+                        </div>
+                        -->
+                            <li class="zxma-menu-divider"></li>
+                            <div class="zxma-submenu-item">
+                                <a href="javascript:void(0);" i18n="setting.systemrestart" onclick="pointMenu('setting-system-restart')">重启</a>
+                            </div>
+                            <li class="zxma-menu-divider"></li>
+                            <div class="zxma-submenu-item">
+                                <a href="javascript:void(0);" i18n="setting.systemupgrade" onclick="pointMenu('setting-system-upgrade')">升级</a>
+                            </div>
+                            <li class="zxma-menu-divider"></li>
+                            <div class="zxma-submenu-item">
+                                <a href="javascript:void(0);" i18n="setting.systemchangepwd" onclick="pointMenu('setting-system-changepwd')">修改密码</a>
+                            </div>
+                            <li class="zxma-menu-divider"></li>
+                            <div class="zxma-submenu-item">
+                                <a href="javascript:void(0);" i18n="setting.systemreset" onclick="pointMenu('setting-system-reset')">恢复出厂设置</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="content" style="height: 100%;width:740px;float:left;">
+                        <div id="setting-security-firewall" style="display: none;">
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="font-size: 18px;padding-left: 20px;padding-bottom: 4px;" i18n="setting.securityfirewall">防火墙</div>
+                                <div style="font-size: 14px;padding-left: 20px;padding-bottom: 4px;" i18n="setting.securityfirewallexplain">提供启用或者禁止防火墙的过滤功能。</div>
+                            </div>
+                            <div style="height: 1px; background-color: #8eebf5;width: 700px;margin: 0 auto;"></div>
+
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 8px;">
+                                <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;" i18n="setting.security.firewallenable">防火墙主开关</div>
+                                <div style="display:inline-block;width: 500px;text-align: left;">
+                                    <input style="vertical-align: middle;" id="enable_firewall" type="checkbox" class="switch" name="enable_firewall" checked="checked">
+                                </div>
+                            </div>
+                            <div style="zoom: 1;clear: both;"></div>
+                            <!--
+
+                        <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 8px;">
+                            <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;" i18n="setting.security.dosenable">DOS攻击防护</div>
+                            <div style="display:inline-block;width: 500px;text-align: left;">
+                                <input style="vertical-align: middle;" id="enable_dos" type="checkbox" class="switch" name="enable_dos">
+                            </div>
+                        </div>
+                        <div style="zoom: 1;clear: both;height: 20px;"></div>
+                        -->
+                        </div>
+
+                        <div id="setting-security-dmz" style="display: none;">
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="font-size: 18px;padding-left: 20px;padding-bottom: 4px;" i18n="setting.securitydmz">DMZ设置</div>
+                                <div style="font-size: 14px;padding-left: 20px;padding-bottom: 4px;" i18n="setting.securitydmzexplain">您可以设定一台局域网内的计算机为 DMZ 主机，该计算机将暴露给广域网，可被广域网上的设备直接访问。注意：与 DMZ 主机相关的 WAN 侧防火墙设置将不起作用。移动流量和有线宽带同时连接时，此功能只能在有线宽带生效。</div>
+                            </div>
+                            <div style="height: 1px; background-color: #8eebf5;width: 700px;margin: 0 auto;"></div>
+
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 8px;">
+                                <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;" i18n="setting.securitydmzstatus">DMZ 开关</div>
+                                <div style="display:inline-block;width: 500px;text-align: left;">
+                                    <input style="vertical-align: middle;" id="enable_dmz" type="checkbox" class="switch" name="enable_dmz">
+                                </div>
+                            </div>
+                            <div style="zoom: 1;clear: both;"></div>
+                            <div id="switch_dmz" class="zxma-hide">
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 8px;">
+                                    <div class="" style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;height: 44px;vertical-align: middle;" i18n="setting.securitydmzhostip">DMZ主机IP地址</div>
+                                    <div class="" style="display:inline-block;width: 500px;text-align: left;height: 44px;vertical-align: middle;">
+                                        <div class="zxma-model-select" style="text-align: center;">
+                                            <div id="dmz_ip" class="zxma-model-select-text" data-value=""></div>
+                                            <div class="zxma-model-select-content">
+                                                <ul id="dmz_options" class="zxma-model-select-option">
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                            </div>
+                            <div style="zoom: 1;clear: both;height: 20px;"></div>
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 8px;">
+                                <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;"></div>
+                                <div style="display:inline-block;width: 500px;text-align: left;">
+                                    <button id="bt_save_dmz" style="height: 36px;width: 260px;border-radius: 12px;border: 1px solid #7072e9;margin: 0;padding: 0;cursor: pointer;
+                                outline: none;font-size: 16px;background-color: #fff;color: #7072e9;" i18n="common.save">保存</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="setting-security-remote" style="display: none;">
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="font-size: 18px;padding-left: 20px;padding-bottom: 4px;" i18n="setting.remote">远程管理</div>
+                                <div style="font-size: 14px;padding-left: 20px;padding-bottom: 4px;"></div>
+                            </div>
+                            <div style="height: 1px; background-color: #8eebf5;width: 700px;margin: 0 auto;"></div>
+
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 8px; margin-top: 20px;">
+                                <div style="vertical-align: top;" class="zxma-wifi-item-left zxma-wifi-item-title" i18n="setting.remote_enable">远程开关</div>
+                                <div style="display:inline-block;width: 500px;text-align: left;">
+                                    <input style="vertical-align: middle;" id="remote_enable" type="checkbox" class="switch" name="remote_enable">
+                                </div>
+
+                                <div id="display_remote_setting" class="zxma-hide">
+                                    <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 2px;">
+                                        <div class="zxma-wifi-item-left zxma-wifi-item-title" style="margin-top: 16px;" i18n="wifi.securitymode">协议类型</div>
+                                        <div class="zxma-wifi-item-right" style="margin-top: 16px;">
+                                            <div class="zxma-model-select">
+                                                <div id="remote_type" class="zxma-model-select-text" data-value=""></div>
+                                                <div class="zxma-model-select-content">
+                                                    <ul class="zxma-model-select-option">
+                                                        <li data-option="mqtt" selected="selected">MQTT</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 2px;">
+                                        <div class="zxma-wifi-item-left zxma-wifi-item-title" style="margin-top: 16px;" i18n="setting.remote_url">服务器地址</div>
+                                        <div style="display:inline-block;width: 400px;text-align: left;">
+                                            <input id="remote_url" class="zxma-wifi-input-pwd" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 2px;">
+                                        <div class="zxma-wifi-item-left zxma-wifi-item-title" style="margin-top: 16px;" i18n="setting.remote_port">服务器端口</div>
+                                        <div style="display:inline-block;width: 400px;text-align: left;">
+                                            <input id="remote_port" class="zxma-wifi-input-pwd" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 2px;">
+                                        <div class="zxma-wifi-item-left zxma-wifi-item-title" style="margin-top: 16px;" i18n="setting.remote_clientid">设备ID</div>
+                                        <div style="display:inline-block;width: 500px;text-align: left;">
+                                            <input id="remote_cid" class="zxma-wifi-input-pwd" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 2px;">
+                                        <div class="zxma-wifi-item-left zxma-wifi-item-title" style="margin-top: 16px;" i18n="setting.remote_username">账户</div>
+                                        <div style="display:inline-block;width: 500px;text-align: left;">
+                                            <input id="remote_username" class="zxma-wifi-input-pwd" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 2px;">
+                                        <div class="zxma-wifi-item-left zxma-wifi-item-title" style="margin-top: 16px;" i18n="setting.remote_password">密码</div>
+                                        <div style="display:inline-block;width: 500px;text-align: left;">
+                                            <input id="remote_password" class="zxma-wifi-input-pwd" type="password">
+                                            <span id="remote_pw_eye" class="zxma-wifi-eye-hs zxma-icon-eyehide"></span>
+                                        </div>
+                                    </div>
+                                    <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 8px;">
+                                        <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 40px;">
+                                            <div style="padding-left: 20px;display:inline-block;width: 180px;text-align:left;
+                                            font-size: 16px;margin-top: 16px;"></div>
+                                            <div style="display:inline-block;width: 500px;text-align: left;">
+                                                <button id="bt_save_remote" style="height: 36px;width: 260px;border-radius: 12px;border: 1px solid #7072e9;margin: 0;padding: 0;cursor: pointer;
+                                            outline: none;font-size: 16px;background-color: #fff;color: #7072e9;" i18n="common.save">保存</button>
+                                            </div>
+                                        </div>
+                                        <div style="zoom: 1;clear: both;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="clear: both;zoom: 1;height: 20px;"></div>
+                        </div>
+
+                        <div id="setting-security-portforward" style="display: none;">
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="font-size: 18px;padding-left: 20px;padding-bottom: 4px;" i18n="setting.securityportforward">端口转发</div>
+                                <div style="font-size: 14px;padding-left: 20px;padding-bottom: 4px;" i18n="setting.securityportforwardexplan">内网的服务，映射到外网地址上。</div>
+                                <div style="font-size: 14px;padding-left: 20px;padding-bottom: 6px;" i18n="setting.securityportforward.help">IP 地址:用来指定局域网里的某台计算机，使其提供服务。局域网/广域网端口:该计算机上提供服务的端口。该端口是一个端口区间。它的取值范围为1至65535。协议:服务应用的协议。</div>
+                            </div>
+                            <div style="height: 1px; background-color: #8eebf5;width: 700px;margin: 0 auto;"></div>
+
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 8px;">
+                                <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;" i18n="setting.securityportforwardswitch">开关状态</div>
+                                <div style="display:inline-block;width: 500px;text-align: left;">
+                                    <input style="vertical-align: middle;" id="enable_forward" type="checkbox" class="switch" name="enable_forward">
+                                </div>
+                            </div>
+                            <div style="zoom: 1;clear: both;height: 30px;"></div>
+                            <div id="switch_portforward" class="zxma-hide">
+                                <div style="padding-left: 20px;">
+                                    <div class="zxma-table">
+                                        <table width="100%" style="border-collapse: collapse;margin: 0 auto;text-align: center;">
+                                            <tr style="text-align: right;">
+                                                <td colspan="7"><span style="padding-right: 12px;color:#7072e9;font-size:20px;cursor: pointer;" onclick="zxma_addPortForWard();">+</span></td>
+                                            </tr>
+                                            <tr style="background-color: #78c5ce;">
+                                                <th i18n="setting.portforward.name">名称</th>
+                                                <th i18n="setting.portforward.lanip">LAN IP 地址</th>
+                                                <th i18n="setting.portforward.port">端口</th>
+                                                <th i18n="setting.portforward.protocol">协议</th>
+                                                <th i18n="table.status">状态</th>
+                                                <th i18n="table.handle">操作</th>
+                                            </tr>
+                                            <tbody id="portforward_content">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div style="zoom: 1;clear: both;height: 20px;"></div>
+                            </div>
+
+                            <div style="clear: both;zoom: 1;height: 20px;"></div>
+                        </div>
+
+                        <div id="setting-system-deviceinfo" style="display: none;">
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="font-size: 18px;padding-left: 20px;padding-bottom: 4px;" i18n="setting.systemdeviceinfo">设备信息</div>
+                            </div>
+                            <div style="height: 1px; background-color: #8eebf5;width: 700px;margin: 0 auto;"></div>
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;" i18n="setting.system.devicename">设备名称</div>
+                                <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="device_name"></div>
+                            </div>
+                            <!--
+                        <div style="zoom: 1;clear: both;"></div>
+                        <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                            <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;" i18n="setting.system.myphone">本机号码</div>
+                            <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="my_phone"></div>                            
+                        </div>
+                        -->
+                            <div style="zoom: 1;clear: both;"></div>
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;" i18n="setting.system.hardver">硬件版本</div>
+                                <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="hard_ver"></div>
+                            </div>
+                            <div style="zoom: 1;clear: both;"></div>
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;" i18n="setting.system.fw_version">固件版本</div>
+                                <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="fw_version"></div>
+                            </div>
+                            <div style="zoom: 1;clear: both;"></div>
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;" i18n="setting.system.webuiver">Web UI 版本</div>
+                                <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="webui_ver"></div>
+                            </div>
+                            <div style="zoom: 1;clear: both;"></div>
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;" i18n="setting.system.lanmac">LAN MAC 地址</div>
+                                <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="lan_mac"></div>
+                            </div>
+                            <div style="zoom: 1;clear: both;"></div>
+                            <!-- 
+                        <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                            <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;" i18n="setting.system.wanip">WAN IP 地址</div>
+                            <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="wanip"></div>                            
+                        </div>
+                        <div style="zoom: 1;clear: both;"></div> 
+                        -->
+                            <div id="mobile_5g_sa" class="zxma-hide">
+                                <!-- 
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;" i18n="setting.mb_type">Type</div>
+                                <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_sa_type"></div>                            
+                            </div>
+                            -->
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">cell ID</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_sa_cellID"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">Band</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_sa_band"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">RSRP</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_sa_RSRP"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">RSRQ</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_sa_RSRQ"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">SINR</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_sa_SINR"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">TAC</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_sa_TAC"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">DL bandwidth</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_sa_dl_bw"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">FNN</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_sa_FNN"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">SNN</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_sa_SNN"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">PLMN</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_sa_RPLMN"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                            </div>
+                            <div id="mobile_lte" class="zxma-hide">
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">Type</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_lte_type"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">TLE mode</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_lte_is_tdd"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">cell ID</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_lte_cellID"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">PCID</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_lte_pcid"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">TAC</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_lte_tac"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">UL bandwidth</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_lte_ul_bw"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">DL bandwidth</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_lte_dl_bw"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">RSRP</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_lte_RSRP"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">RSRQ</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_lte_RSRQ"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">SINR</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_lte_SINR"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">RSSI</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_lte_RSSI"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">CQI</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_lte_CQI"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">FNN</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_lte_FNN"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">SNN</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_lte_SNN"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                    <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                    font-size: 16px;margin-top: 16px;">PLMN</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;padding-left: 20px;" id="mb_lte_RPLMN"></div>
+                                </div>
+                                <div style="zoom: 1;clear: both;"></div>
+                            </div>
+                            <div style="zoom: 1;clear: both;height: 20px;"></div>
+                        </div>
+
+                        <div id="setting-system-time" style="display: none;">
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="font-size: 18px;padding-left: 20px;padding-bottom: 4px;" i18n="setting.time.setting">时间设置</div>
+                                <div style="font-size: 14px;padding-left: 20px;padding-bottom: 4px;"></div>
+                            </div>
+                            <div style="height: 1px; background-color: #8eebf5;width: 700px;margin: 0 auto;"></div>
+                            <div style="height: 50px;width: 700px;"></div>
+
+                            <div style="height: auto;margin: 0 auto;text-align: left;padding-top: 2px;">
+                                <div class="zxma-wifi-item-left zxma-wifi-item-title" style="margin-top: 16px;" i18n="setting.time.ntp_enable">同步网络时间</div>
+                                <div class="zxma-wifi-item-right">
+                                    <input id="ntp_enable" type="checkbox" class="switch" style="margin-top: 16px;" checked="checked">
+                                </div>
+                            </div>
+                            <div id="display_ntp_server" class="zxma-hide">
+                                <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 8px;">
+                                    <div class="zxma-wifi-item-left zxma-wifi-item-title" style="height: 25px; vertical-align: middle;" i18n="setting.time.timezone">时区</div>
+                                    <div style="display:inline-block;width: 500px;text-align: left;">
+                                        <div class="zxma-model-select" style="width: 350px;">
+                                            <div id="time_timezone" class="zxma-model-select-text" data-value="">默认</div>
+                                            <div class="zxma-model-select-content">
+                                                <ul class="zxma-model-select-option">
+                                                    <li data-option="UTC+12" i18n="setting.time.timezone0">(UTC-12) 国际日期变更线西</li>
+                                                    <li data-option="UTC+11" i18n="setting.time.timezone1">(UTC-11) 中途岛/萨摩亚群岛</li>
+                                                    <li data-option="UTC+10" i18n="setting.time.timezone2">(UTC-10) 夏威夷</li>
+                                                    <li data-option="UTC+9" i18n="setting.time.timezone3">(UTC-9) 阿拉斯加</li>
+                                                    <li data-option="UTC+8" i18n="setting.time.timezone4">(UTC-8) 太平洋</li>
+                                                    <li data-option="UTC+7" i18n="setting.time.timezone5">(UTC-7) 奇瓦瓦/拉巴斯/马萨特兰</li>
+                                                    <li data-option="UTC+6" i18n="setting.time.timezone6">(UTC-6) 墨西哥/蒙特雷/中美洲</li>
+                                                    <li data-option="UTC+5" i18n="setting.time.timezone7">(UTC-5) 海地/波哥大/哈瓦那</li>
+                                                    <li data-option="UTC+4" i18n="setting.time.timezone8">(UTC-4) 圣地亚哥/大西洋/亚松森</li>
+                                                    <li data-option="UTC+3" i18n="setting.time.timezone9">(UTC-3) 格林兰/巴西利亚/萨尔瓦多</li>
+                                                    <li data-option="UTC+2" i18n="setting.time.timezone10">(UTC-2) 中大西洋</li>
+                                                    <li data-option="UTC+1" i18n="setting.time.timezone11">(UTC-1) 亚速尔/弗得角</li>
+                                                    <li data-option="UTC" i18n="setting.time.timezone12">(UTC) 伦敦/都柏林/爱丁堡</li>
+                                                    <li data-option="UTC-1" i18n="setting.time.timezone13">(UTC+1) 巴黎/罗马/柏林/哥本哈根</li>
+                                                    <li data-option="UTC-2" i18n="setting.time.timezone14">(UTC+2) 雅典/大马士革/耶路撒冷</li>
+                                                    <li data-option="UTC-3" i18n="setting.time.timezone15">(UTC+3) 莫斯科/科威特/伊斯坦布尔</li>
+                                                    <li data-option="UTC-4" i18n="setting.time.timezone16">(UTC+4) 阿布扎比/巴库/路易港</li>
+                                                    <li data-option="UTC-5" i18n="setting.time.timezone17">(UTC+5) 伊斯兰堡/卡拉奇</li>
+                                                    <li data-option="UTC-6" i18n="setting.time.timezone18">(UTC+6) 达卡/鄂木斯克</li>
+                                                    <li data-option="UTC-7" i18n="setting.time.timezone19">(UTC+7) 曼谷/河内/雅加达</li>
+                                                    <li data-option="UTC-8" i18n="setting.time.timezone20">(UTC+8) 北京/吉隆坡/新加坡</li>
+                                                    <li data-option="UTC-9" i18n="setting.time.timezone21">(UTC+9) 东京/首尔/平壤</li>
+                                                    <li data-option="UTC-10" i18n="setting.time.timezone22">(UTC+10) 悉尼/墨尔本</li>
+                                                    <li data-option="UTC-11" i18n="setting.time.timezone23">(UTC+11) 所罗门/马加丹</li>
+                                                    <li data-option="UTC-12" i18n="setting.time.timezone24">(UTC+12) 惠灵顿/斐济/奥克兰</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="height: auto;margin: 0 auto;text-align: left;padding-top: 2px;">
+                                    <div class="zxma-wifi-item-left zxma-wifi-item-title" style="margin-top: 16px;" i18n="setting.time.ntp_server1">时间服务器1</div>
+                                    <div style="display:inline-block;width: 400px;text-align: left;">
+                                        <input id="ntp_server0" class="zxma-wifi-input-pwd" maxlength="64" style="width: 340px;" type="text">
+                                    </div>
+                                </div>
+                                <div style="height: auto;margin: 0 auto;text-align: left;padding-top: 2px;">
+                                    <div class="zxma-wifi-item-left zxma-wifi-item-title" style="margin-top: 16px;" i18n="setting.time.ntp_server2">时间服务器2</div>
+                                    <div style="display:inline-block;width: 400px;text-align: left;">
+                                        <input id="ntp_server1" class="zxma-wifi-input-pwd" maxlength="64" style="width: 340px;" type="text">
+                                    </div>
+                                </div>
+                                <div style="height: auto;margin: 0 auto;text-align: left;padding-top: 2px;">
+                                    <div class="zxma-wifi-item-left zxma-wifi-item-title" style="margin-top: 16px;" i18n="setting.time.ntp_server3">时间服务器3</div>
+                                    <div style="display:inline-block;width: 400px;text-align: left;">
+                                        <input id="ntp_server2" class="zxma-wifi-input-pwd" maxlength="64" style="width: 340px;" type="text">
+                                    </div>
+                                </div>
+                                <div style="height: auto;margin: 0 auto;text-align: left;padding-top: 2px;">
+                                    <div class="zxma-wifi-item-left zxma-wifi-item-title" style="margin-top: 16px;" i18n="setting.time.ntp_server4">时间服务器4</div>
+                                    <div style="display:inline-block;width: 400px;text-align: left;">
+                                        <input id="ntp_server3" class="zxma-wifi-input-pwd" maxlength="64" style="width: 340px;" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="display_manual_time" class="zxma-hide">
+                                <div style="height: auto;margin: 0 auto;text-align: left;padding-top: 2px;">
+                                    <div class="zxma-wifi-item-left zxma-wifi-item-title" style="height: 25px; vertical-align: middle;" i18n="setting.time.manual">设置时间</div>
+                                    <div style="display:inline-block;width: 400px;text-align: left;">
+                                        <input id="manual_time" class="zxma-wifi-input-pwd" style="margin-top: 16px; width: 200px;" type="datetime-local">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 50px;">
+                                <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;"></div>
+                                <div style="display:inline-block;width: 500px;text-align: left;">
+                                    <button id="bt_save_time" class="zxma-wifi-btn" i18n="common.save">保存</button>
+                                </div>
+                            </div>
+                            <div style="zoom: 1;clear: both;"></div>
+                            <div style="clear: both;zoom: 1;height: 20px;"></div>
+                        </div>
+
+                        <div id="setting-system-restart" style="display: none;">
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="font-size: 18px;padding-left: 20px;padding-bottom: 4px;" i18n="setting.systemrestart">重启</div>
+                                <div style="font-size: 14px;padding-left: 20px;padding-bottom: 4px;" i18n="setting.systemrestartexplain">点击下面的按钮，将重启设备。</div>
+                            </div>
+                            <div style="height: 1px; background-color: #8eebf5;width: 700px;margin: 0 auto;"></div>
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 60px;">
+                                <div class="" style="margin: 0 auto;text-align: center;">
+                                    <button i18n="setting.systemrestart" style="height: 40px;width: 300px;border-radius: 12px;border: 1px solid #7072e9;margin: 0;padding: 0;cursor: pointer;
+                                outline: none;font-size: 16px;background-color: #fff;color: #7072e9;" onclick="zxma_systemRestart()">重启</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="setting-system-upgrade" style="display: none;">
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="font-size: 18px;padding-left: 20px;padding-bottom: 4px;" i18n="setting.systemupgrade">升级</div>
+                                <div style="font-size: 14px;padding-left: 20px;padding-bottom: 4px;"></div>
+                            </div>
+                            <div style="height: 1px; background-color: #8eebf5;width: 700px;margin: 0 auto;"></div>
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 60px;">
+                                <div class="" style="margin: 0 auto;text-align: center;">
+                                    <input type="file" id="uploadFile" />
+                                </div>
+                            </div>
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 60px;">
+                                <div class="" style="margin: 0 auto;text-align: center;">
+                                    <button i18n="setting.systemupgrade" style="height: 40px;width: 300px;border-radius: 12px;border: 1px solid #7072e9;margin: 0;padding: 0;cursor: pointer;
+                                outline: none;font-size: 16px;background-color: #fff;color: #7072e9;" onclick="uploadImage()">升级</button>
+                                </div>
+                            </div>
+
+                            <div style="clear: both;zoom: 1;"></div>
+                        </div>
+                        <div id="setting-system-changepwd" style="display: none;">
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="font-size: 18px;padding-left: 20px;padding-bottom: 4px;" i18n="setting.systemchangepwd">修改密码</div>
+                                <div style="font-size: 14px;padding-left: 20px;padding-bottom: 4px;" i18n="setting.systemchangepwdexplain">经常修改登录 Web 配置界面的密码，可以防止未经授权的用户修改 Web 配置界面的相关参数。</div>
+                            </div>
+                            <div style="height: 1px; background-color: #8eebf5;width: 700px;margin: 0 auto;"></div>
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;" i18n="setting.systemchangecurpwd">当前密码</div>
+                                <div style="display:inline-block;width: 500px;text-align: left;">
+                                    <input id="cur_pwd" name="cur_pwd" class="zxma-wifi-input-pwd" type="password" maxlength="32">
+                                </div>
+                            </div>
+                            <div style="zoom: 1;clear: both;"></div>
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 12px;">
+                                <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;" i18n="setting.systemchangenewpwd">新密码</div>
+                                <div style="display:inline-block;width: 500px;text-align: left;">
+                                    <input id="new_pwd" name="new_pwd" class="zxma-wifi-input-pwd" type="password" maxlength="32">
+                                </div>
+                            </div>
+                            <div style="zoom: 1;clear: both;"></div>
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 12px;">
+                                <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;" i18n="setting.systemchangeconpwd">确认密码</div>
+                                <div style="display:inline-block;width: 500px;text-align: left;">
+                                    <input id="con_pwd" name="con_pwd" class="zxma-wifi-input-pwd" type="password" maxlength="32">
+                                </div>
+                            </div>
+                            <div style="zoom: 1;clear: both;"></div>
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 12px;">
+                                <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                                font-size: 16px;margin-top: 16px;"></div>
+                                <div style="display:inline-block;width: 500px;text-align: left;">
+                                    <button id="system_changepwd" class="zxma-wifi-btn" i18n="common.save">保存</button>
+                                </div>
+                            </div>
+                            <div style="zoom: 1;clear: both;"></div>
+                        </div>
+
+                        <div id="setting-system-reset" style="display: none;">
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 20px;">
+                                <div style="font-size: 18px;padding-left: 20px;padding-bottom: 4px;" i18n="setting.systemreset">恢复出厂设置</div>
+                                <div style="font-size: 14px;padding-left: 20px;padding-bottom: 4px;" i18n="setting.systemresetexplain">恢复出厂后，设备的所有配置将恢复到出厂状态。请慎用。</div>
+                            </div>
+                            <div style="height: 1px; background-color: #8eebf5;width: 700px;margin: 0 auto;"></div>
+                            <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 60px;">
+                                <div class="" style="margin: 0 auto;text-align: center;">
+                                    <button i18n="setting.systemreset" style="height: 40px;width: 300px;border-radius: 12px;border: 1px solid #7072e9;margin: 0;padding: 0;cursor: pointer;
+                                outline: none;font-size: 16px;background-color: #fff;color: #7072e9;" onclick="zxma_systemReset()">恢复</button>
+                                </div>
+                            </div>
+                            <div style="clear: both;zoom: 1;"></div>
+                        </div>
+
+                    </div>
+
+                    <div style="clear: both;zoom: 1;"></div>
+                </div>
+            </div>
+
+        </section>
+
+        <div id="maskPortForward" style="display: none;width: 100%;height: 100%;z-index: 999;position: absolute;top: 0;
+    bottom: 0;right: 0;left: 0;background-color: rgba(30, 32, 34, 0.8);opacity: 0.6;"></div>
+        <div id="modelPortForward" style="display: none;width: 600px;height: auto;z-index: 999;position: absolute;
+        top: 50%;left: 50%;transform: translate(-50%,-50%);background-color: rgba(245, 246, 248, 1);border-radius: 12px;">
+            <div style="position: relative;opacity: 0.6;width: 100%;margin: 0 auto;padding-top: 20px;padding-bottom: 20px;">
+                <div class="" style="margin: 20px auto;width: 500px;height: auto;text-align: center;">
+                    <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 8px;">
+                        <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                        font-size: 16px;margin-top: 16px;" i18n="setting.portforward.name">名称</div>
+                        <div style="display:inline-block;width: 300px;text-align: left;">
+                            <input id="forward_name" name="forward_name" class="zxma-wifi-input-pwd" type="text" maxlength="32">
+                        </div>
+                    </div>
+                    <div style="zoom: 1;clear: both;"></div>
+
+                    <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 8px;">
+                        <div class="" style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                        font-size: 16px;margin-top: 16px;height: 44px;vertical-align: middle;" i18n="setting.portforward.protocol">协议</div>
+                        <div class="" style="display:inline-block;width: 300px;text-align: left;height: 44px;vertical-align: middle;">
+                            <div class="zxma-model-select" style="text-align: center;">
+                                <div id="forward_protocol" class="zxma-model-select-text" data-value="1">TCP/UDP</div>
+                                <div class="zxma-model-select-content">
+                                    <ul class="zxma-model-select-option">
+                                        <li data-option="1">TCP/UDP</li>
+                                        <li data-option="2">TCP</li>
+                                        <li data-option="3">UDP</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="zoom: 1;clear: both;"></div>
+
+                    <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 2px;">
+                        <div style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                        font-size: 16px;margin-top: 16px;" i18n="setting.portforward.port">端口</div>
+                        <div style="display:inline-block;width: 300px;text-align: left;">
+                            <input id="forward_wan_port" name="forward_wan_port" class="zxma-wifi-input-pwd" type="number" maxlength="32">
+                        </div>
+                    </div>
+                    <div style="zoom: 1;clear: both;"></div>
+
+                    <div class="" style="height: auto;margin: 0 auto;text-align: left;padding-top: 8px;">
+                        <div class="" style="padding-left: 20px;display:inline-block;width: 160px;text-align:left;
+                        font-size: 16px;margin-top: 16px;height: 44px;vertical-align: middle;" i18n="setting.portforward.lanip">LAN IP 地址</div>
+                        <div class="" style="display:inline-block;width: 300px;text-align: left;height: 44px;vertical-align: middle;">
+                            <div class="zxma-model-select" style="text-align: center;">
+                                <div id="forward_ip" class="zxma-model-select-text" data-value=""></div>
+                                <div class="zxma-model-select-content">
+                                    <ul id="forward_ip_options" class="zxma-model-select-option">
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="zoom: 1;clear: both;height: 40px;"></div>
+                </div>
+                <div class="" style="margin: 0 auto;text-align: center;">
+                    <button style="height: 36px;width: 120px;border-radius: 8px;border: 1px solid #af6329;margin: 0;padding: 0;cursor: pointer;
+                outline: none;font-size: 16px;background-color: #fff;color: #af6329;" i18n="common.cancel" onclick="zxma_PortForwardCancel()">取消</button>
+                    <button style="height: 36px;width: 120px;border-radius: 8px;border: 1px solid #FF7002;margin: 0;padding: 0;cursor: pointer;
+                outline: none;font-size: 16px;background-color: #fff;color: #FF7002;" i18n="common.confirm" onclick="zxma_PortForwardConfirm()">确定</button>
+                </div>
+            </div>
+        </div>
+        <div id="mask" style="display: none;width: 100%;height: 100%;z-index: 999;position: absolute;top: 0;
+        bottom: 0;right: 0;left: 0;background-color: rgba(30, 32, 34, 0.8);opacity: 0.6;"></div>
+        <div id="model" style="display: none;width: 400px;height: auto;z-index: 999;position: absolute;
+        top: 230px;left: 50%;transform: translate(-50%,-50%);background-color: rgba(245, 246, 248, 1);border-radius: 12px;">
+            <div style="position: relative;opacity: 0.6;width: 100%;margin: 0 auto;padding-top: 20px;padding-bottom: 20px;">
+                <div class="" style="margin: 20px auto;width: 80%;height: auto;text-align: center;">
+                    <label id="msg_info"></label>
+                </div>
+                <div class="" style="margin: 0 auto;text-align: center;">
+
+                </div>
+            </div>
+        </div>
+        <!--  -->
+
+
+    </div>
+
+    <script type="text/javascript" src="assets/js/zxma.cpe.js"></script>
+    <script type="text/javascript">
+        var itemHeight = 40;
+        var dividerHeight = 1;
+
+        $(function() {
+            var token = getCookie("zxma-token");
+            if (!token) {
+                window.location.href = "index.html"
+                return;
+            }
+
+            $("#bt_save_remote").click(function() {
+                var checked_remote_enable = $('#remote_enable').is(':checked');
+                var remote_enable = 0
+                if (checked_remote_enable) {
+                    remote_enable = 1
+                }
+
+                var data = {};
+                data["remote_enable"] = remote_enable;
+                data["remote_type"] = $("#remote_type").val();
+                data["mq_url"] = $("#remote_url").val();
+                data["mq_port"] = $("#remote_port").val();
+                data["mq_cid"] = $("#remote_cid").val();
+                data["mq_usr"] = $("#remote_username").val();
+                data["mq_pwd"] = $("#remote_password").val();
+
+                zxma_requestRemoteSet(data);
+            });
+
+            var remote_pw_eye = $('#remote_pw_eye');
+            var remote_password = $("#remote_password");
+            remote_pw_eye.off('click').on('click', function() {
+                if (remote_pw_eye.hasClass('zxma-icon-eyehide')) {
+                    remote_pw_eye.removeClass('zxma-icon-eyehide').addClass('zxma-icon-eyeshow');
+                    remote_password.prop('type', 'text');
+                } else {
+                    remote_pw_eye.removeClass('zxma-icon-eyeshow').addClass('zxma-icon-eyehide');
+                    remote_password.prop('type', 'password');
+                };
+            });
+
+            $("#enable_firewall").change(function() {
+                var enable_firewall = $('#enable_firewall').is(':checked');
+                if (!enable_firewall) {
+                    zxma_requestFireFireWallSwitch(0);
+                } else {
+                    zxma_requestFireFireWallSwitch(1);
+                }
+            });
+
+            /*
+                    $("#enable_dos").change(function(){
+                        var enable_dos = $('#enable_dos').is(':checked');
+                        if(!enable_dos){
+                            zxma_requestFireDosSwitch(0);
+                        } else {
+                            zxma_requestFireDosSwitch(1);
+                        }
+                    });
+            */
+
+            $("#remote_enable").change(function() {
+                var remote_enable = $('#remote_enable').is(':checked');
+                var data = {}
+                if (!remote_enable) {
+                    data["remote_enable"] = 0;
+                    //                zxma_requestRemoteSet(data);
+                    $("#display_remote_setting").removeClass("zxma-show").addClass("zxma-hide");
+                } else {
+                    data["remote_enable"] = 1;
+                    //                zxma_requestRemoteSet(data);
+                    $("#display_remote_setting").removeClass("zxma-hide").addClass("zxma-show"); 
+                }
+            })
+
+            $("#enable_forward").change(function() {
+                var enable_forward = $('#enable_forward').is(':checked');
+                if (!enable_forward) {
+                    zxma_requestPortForwardSwitch(0);
+                } else {
+                    zxma_requestPortForwardSwitch(1);
+                }
+            })
+
+            $("#enable_dmz").change(function() {
+                var enable_dmz = $('#enable_dmz').is(':checked');
+                if (enable_dmz) {
+                    $("#switch_dmz").removeClass("zxma-hide").addClass("zxma-show");
+                } else {
+                    $("#switch_dmz").removeClass("zxma-show").addClass("zxma-hide");
+                }
+            });
+
+            $("#bt_save_dmz").click(function() {
+                var data = {}
+                var enable_dmz = $('#enable_dmz').is(':checked');
+                if (enable_dmz) {
+                    data["enable"] = "1";
+                    data["dmz_ip"] = $("#dmz_ip").attr('data-value');
+                } else {
+                    data["enable"] = "0";
+                }
+                zxma_requestDmzSet(data);
+            });
+
+
+            $("#bt_save_time").click(function() {
+                var data = {}
+                var ntp_enable = $('#ntp_enable').is(':checked');
+                if (ntp_enable) {
+                    data["ntp_enable"] = "1";
+                    data["timezone"] = $("#time_timezone").attr('data-value');
+                    data["ntp_server0"] = $("#ntp_server0").val();
+                    data["ntp_server1"] = $("#ntp_server1").val();
+                    data["ntp_server2"] = $("#ntp_server2").val();
+                    data["ntp_server3"] = $("#ntp_server3").val();
+                } else {
+                    data["ntp_enable"] = "0";
+                    data["manual_time"] = $("#manual_time").val();
+                }
+                zxma_requestTimeSet(data);
+            });
+
+            $("#ntp_enable").change(function() {
+                var ntp_enable = $('#ntp_enable').is(':checked');
+                if (!ntp_enable) {
+                    $("#display_ntp_server").removeClass("zxma-show").addClass("zxma-hide"); 
+                    $("#display_manual_time").removeClass("zxma-hide").addClass("zxma-show"); 
+                } else {
+                    $("#display_ntp_server").removeClass("zxma-hide").addClass("zxma-show"); 
+                    $("#display_manual_time").removeClass("zxma-show").addClass("zxma-hide"); 
+                }
+            });
+
+            $("#system_changepwd").click(function() {
+                var cur_pwd = $("#cur_pwd").val().trim();
+                var new_pwd = $("#new_pwd").val().trim();
+                var con_pwd = $("#con_pwd").val().trim();
+                if (!cur_pwd) {
+                    $('#msg_info').text("请输入当前密码");
+                    $('#mask').css("display", 'block')
+                    $('#model').css("display", 'block')
+                    setTimeout(function() {
+                        $('#mask').css("display", 'none')
+                        $('#model').css("display", 'none')
+                    }, 1000)
+                    return;
+                }
+                if (!new_pwd) {
+                    $('#msg_info').text("请输入新密码");
+                    $('#mask').css("display", 'block')
+                    $('#model').css("display", 'block')
+                    setTimeout(function() {
+                        $('#mask').css("display", 'none')
+                        $('#model').css("display", 'none')
+                    }, 1000)
+                    return;
+                }
+                if (!con_pwd) {
+                    $('#msg_info').text("请确认新密码");
+                    $('#mask').css("display", 'block')
+                    $('#model').css("display", 'block')
+                    setTimeout(function() {
+                        $('#mask').css("display", 'none')
+                        $('#model').css("display", 'none')
+                    }, 1000)
+                    return;
+                }
+                if (new_pwd != con_pwd) {
+                    $('#msg_info').text("新密码不一致，请重新输入");
+                    $('#mask').css("display", 'block')
+                    $('#model').css("display", 'block')
+                    setTimeout(function() {
+                        $('#mask').css("display", 'none')
+                        $('#model').css("display", 'none')
+                    }, 1000)
+                    return;
+                }
+                var data = {
+                    curpassword: cur_pwd,
+                    newpassword: new_pwd
+                }
+
+                zxma_requestSystemModifyPwd(data);
+                zxma_setIframeHeight("zxma_setting")
+            });
+
+            zxma_selectModel();
+            zxma_requestSystemDeviceInfo();
+            zxma_requestMobileInfo();
+
+            zxma_requestDmzHostList();
+            zxma_requestDmzGet();
+            zxma_requestFireGet();
+            zxma_requestPortForwardGet();
+            zxma_initPortForwardParams();
+            zxma_requestPortForwardList();
+            zxma_requestTimeGet();
+            zxma_requestRemoteGet();
+            pointMenu("setting-system-deviceinfo");
+
+            zxma_setIframeHeight("zxma_fixed");
+            setInterval(function() {
+                zxma_requestSystemDeviceInfo();
+                zxma_requestMobileInfo();
+            }, 100000)
+        })
+
+        function uploadImage() {
+            //判断是否有选择上传文件
+            var imgPath = $("#uploadFile").val();
+            if (imgPath == "") {
+                return;
+            }
+            var zxmaToken = getCookie("zxma-token");
+            var formData = new FormData();
+            var file = $('#uploadFile')[0].files[0];
+            formData.append('file', file);
+            $('#msg_info').text("设置中(Loading)");
+            $('#mask').css("display", 'block')
+            $('#model').css("display", 'block')
+
+            $.ajax({
+                type: "POST",
+                url: baseURL + "/action/adv_system_upgrade",
+                data: formData,
+                headers: {
+                    'zxma-token': zxmaToken
+                },
+                contentType: false,
+                processData: false,
+                datatype: 'json',
+                success: function(data) {
+                    console.log(data);
+                },
+                error: function(XMLHttpRequest, textStatus, errorThrown) {}
+            });
+            setTimeout(function() {
+                $('#mask').css("display", 'none')
+                $('#model').css("display", 'none')
+            }, 1000)
+        }
+
+        function zxma_initPortForwardParams() {
+            zxma_initPortForwardName("");
+            zxma_initPortForwardProtocol(1);
+            zxma_initPortForwardWanPort("");
+            zxma_initPortForwardLanIp("");
+        }
+
+        function zxma_initPortForwardName(value) {
+            $("#forward_name").val(value);
+        }
+
+        function zxma_initPortForwardProtocol(option) {
+            var forward_protocol = $('.zxma-model-select-content ul.zxma-model-select-option', $("#forward_protocol").parent());
+            forward_protocol.find('li').each(function(index, element) {
+                if ($(this).attr('data-option') == option) {
+                    $(this).parent().parent().siblings('div.zxma-model-select-text').text($(this).text()).attr('data-value', $(this).attr('data-option'));
+                    $(this).addClass('selected data-selected').siblings('li').removeClass('selected data-selected');
+                    return;
+                }
+            });
+        }
+
+        function zxma_initPortForwardWanPort(port) {
+            $("#forward_wan_port").val(port);
+        }
+
+        function zxma_initPortForwardLanIp(option) {
+            $("#forward_ip").attr('data-value', "");
+            $("#forward_ip").html("");
+            var forward_ip = $('.zxma-model-select-content ul.zxma-model-select-option', $("#forward_ip").parent());
+            forward_ip.find('li').each(function(index, element) {
+                if ($(this).attr('data-option') == option) {
+                    $(this).parent().parent().siblings('div.zxma-model-select-text').text($(this).text()).attr('data-value', $(this).attr('data-option'));
+                    $(this).addClass('selected data-selected').siblings('li').removeClass('selected data-selected');
+                    return;
+                }
+                //$(this).parent().parent().siblings('div.zxma-model-select-text').text("").attr('data-value', "");              
+            });
+        }
+
+        function zxma_enableforwardChange(node) {
+            var nodeObj = node.parentNode.parentNode;
+            var mac = nodeObj.cells[0].innerText;
+            var obj2 = $(node.parentNode.parentNode.cells[6]);
+            var s_State = $("#table_switch", obj2).is(':checked');
+            if (s_State) {
+                var data = {
+                    mac: mac,
+                    status: 1
+                }
+                zxma_requestPortForwardStatus(data);
+            } else {
+                var data = {
+                    mac: mac,
+                    status: 0
+                }
+                zxma_requestPortForwardStatus(data);
+            }
+        }
+
+        function zxma_forwardEdit(node) {
+            $('#maskPortForward').css("display", 'block');
+            $('#modelPortForward').css("display", 'block');
+            var nodeObj = node.parentNode.parentNode;
+            zxma_initPortForwardName(nodeObj.cells[2].innerText);
+            zxma_initPortForwardProtocol(nodeObj.cells[1].innerText);
+            zxma_initPortForwardWanPort(nodeObj.cells[4].innerText);
+            zxma_initPortForwardLanIp(nodeObj.cells[0].innerText);
+        }
+
+        function zxma_forwardDelete(node) {
+            var nodeObj = node.parentNode.parentNode;
+            var data = {
+                mac: nodeObj.cells[0].innerText
+            }
+            zxma_requestPortForwardDel(data);
+        }
+
+        function zxma_addPortForWard() {
+            $('#maskPortForward').css("display", 'block');
+            $('#modelPortForward').css("display", 'block');
+
+
+        }
+
+        function zxma_PortForwardCancel() {
+            $('#maskPortForward').css("display", 'none');
+            $('#modelPortForward').css("display", 'none');
+            zxma_initPortForwardParams();
+        }
+
+        function zxma_PortForwardConfirm() {
+            $('#maskPortForward').css("display", 'none');
+            $('#modelPortForward').css("display", 'none');
+            var forward_name = $("#forward_name").val();
+            var forward_wan_port = $("#forward_wan_port").val();
+            var forward_protocol = $("#forward_protocol").attr('data-value');
+            var forward_mac = $("#forward_ip").attr('data-value');
+            var forward_ip = $("#forward_ip").html();
+            var data = {
+                name: forward_name,
+                protocol: forward_protocol,
+                mac: forward_mac,
+                lan_ip: forward_ip,
+                wan_port: forward_wan_port
+            }
+            zxma_requestPortForwardSet(data)
+        }
+
+        function zxma_portForwardList(node) {
+            var sel_node = $(node);
+            sel_node.parent().parent().siblings('div.zxma-model-select-text').text(sel_node.text()).attr('data-value', sel_node.attr('data-option'));
+            sel_node.addClass('selected data-selected').siblings('li').removeClass('selected data-selected');
+        }
+
+        function zxma_requestPortForwardList() {
+            postAjaxHttpRequst('/action/setting_forwardlist', null, function(res) {
+                if (res && res.state) {
+                    var listOption = res.data;
+                    var content = "";
+                    $.each(listOption, function(index, item) {
+                        content += zxma_portForwardContent(item);
+                    });
+                    $("#portforward_content").empty();
+                    $("#portforward_content").append(content);
+                }
+            })
+        }
+
+        function zxma_requestPortForwardSet(data) {
+            $('#msg_info').text("设置中(Loading)");
+            $('#mask').css("display", 'block')
+            $('#model').css("display", 'block')
+            postAjaxHttpRequst('/action/setting_forwardset', data, function(res) {
+                if (res && res.state) {
+                    $('#msg_info').text("成功(Success)");
+                    zxma_initPortForwardParams();
+                    zxma_requestPortForwardList();
+                    setTimeout(function() {
+                        $('#mask').css("display", 'none')
+                        $('#model').css("display", 'none')
+                    }, 1000)
+                }
+            })
+        }
+
+        function zxma_requestPortForwardDel(data) {
+            $('#msg_info').text("设置中(Loading)");
+            $('#mask').css("display", 'block')
+            $('#model').css("display", 'block')
+            postAjaxHttpRequst('/action/setting_forwarddel', data, function(res) {
+                if (res && res.state) {
+                    $('#msg_info').text("成功(Success)");
+                    zxma_initPortForwardParams();
+                    zxma_requestPortForwardList();
+                    setTimeout(function() {
+                        $('#mask').css("display", 'none')
+                        $('#model').css("display", 'none')
+                    }, 1000)
+                }
+            })
+        }
+
+        function zxma_requestPortForwardStatus(data) {
+            $('#msg_info').text("设置中(Loading)");
+            $('#mask').css("display", 'block')
+            $('#model').css("display", 'block')
+            postAjaxHttpRequst('/action/setting_forwardstatus', data, function(res) {
+                if (res && res.state) {
+                    $('#msg_info').text("成功(Success)");
+                    zxma_requestPortForwardList();
+                    setTimeout(function() {
+                        $('#mask').css("display", 'none')
+                        $('#model').css("display", 'none')
+                    }, 1000)
+                }
+            })
+        }
+
+        function zxma_portForwardContent(item) {
+            var content = "";
+            var pr = "";
+            if (item.protocol == 1) {
+                pr = "TCP/UDP";
+            }
+            if (item.protocol == 2) {
+                pr = "TCP";
+            }
+            if (item.protocol == 3) {
+                pr = "UDP";
+            }
+            if (1 == item.status) {
+                content = "<tr><td style='display: none;'>" + item.mac + "</td>" +
+                    "<td style='display: none;'>" + item.protocol + "</td>" +
+                    "<td>" + item.name + "</td>" +
+                    "<td>" + item.lan_ip + "</td>" +
+                    "<td>" + item.wan_port + "</td>" +
+                    "<td>" + pr + "</td>" +
+                    "<td><input type='checkbox' id='table_switch' class='switch' checked='checked' onclick='zxma_enableforwardChange(this);'/></td>" +
+                    "<td><span class='zxma-icon-edit' onclick='zxma_forwardEdit(this);'></span>" +
+                    "<span class='zxma-icon-delete' style='margin-left: 2px;' onclick='zxma_forwardDelete(this)'></span>" +
+                    "</td></tr>";
+            } else {
+                content = "<tr><td style='display: none;'>" + item.mac + "</td>" +
+                    "<td style='display: none;'>" + item.protocol + "</td>" +
+                    "<td>" + item.name + "</td>" +
+                    "<td>" + item.lan_ip + "</td>" +
+                    "<td>" + item.wan_port + "</td>" +
+                    "<td>" + pr + "</td>" +
+                    "<td><input type='checkbox' id='table_switch' class='switch' onclick='zxma_enableforwardChange(this);'/></td>" +
+                    "<td><span class='zxma-icon-edit' onclick='zxma_forwardEdit(this);'></span>" +
+                    "<span class='zxma-icon-delete' style='margin-left: 2px;' onclick='zxma_forwardDelete(this)'></span>" +
+                    "</td></tr>";
+            }
+
+            return content;
+        }
+
+        function zxma_initEnable_portForward(value) {
+            if (1 == value) {
+                $('#enable_forward').attr('checked', 'checked');
+                $('#switch_portforward').removeClass("zxma-hide").addClass("zxma-show");
+            } else {
+                $('#enable_forward').removeAttr('checked');
+                $("#switch_portforward").removeClass("zxma-show").addClass("zxma-hide");
+            }
+        }
+
+        function zxma_requestPortForwardGet() {
+            postAjaxHttpRequst('/action/setting_forwardget', null, function(res) {
+                if (res && res.state) {
+                    zxma_initEnable_portForward(res.data.forward_enable);
+                }
+            })
+        }
+
+        function zxma_requestPortForwardSwitch(enable) {
+            //$('#msg_info').text("设置中(Loading)");
+            $('#mask').css("display", 'block')
+            $('#model').css("display", 'block')
+            var data = {
+                forward_enable: enable
+            }
+            postAjaxHttpRequst('/action/setting_forwardswitch', data, function(res) {
+                if (res && res.state) {
+                    //$('#msg_info').text("成功(Success)");
+                    zxma_requestPortForwardGet();
+                }
+            })
+        }
+
+        function zxma_initRemoteEnable(value) {
+            if (1 == value) {
+                $('#remote_enable').attr('checked', 'checked');
+                $("#display_remote_setting").removeClass("zxma-hide").addClass("zxma-show"); 
+            } else {
+                $('#remote_enable').removeAttr('checked');
+                $("#display_remote_setting").removeClass("zxma-show").addClass("zxma-hide");
+            }
+        }
+
+        function zxma_initRemoteUrl(value) {
+            $("#remote_url").val(value);
+        }
+
+        function zxma_initRemotePort(value) {
+            $("#remote_port").val(value);
+        }
+
+        function zxma_initRemoteCID(value) {
+            $("#remote_cid").val(value);
+        }
+
+        function zxma_initRemoteUser(value) {
+            $("#remote_username").val(value);
+        }
+
+        function zxma_initRemotePswd(value) {
+            $("#remote_password").val(value);
+        }
+
+        function zxma_initRemoteType(value) {
+            var option = $('.zxma-model-select-content ul.zxma-model-select-option', $("#remote_type").parent());
+            option.find('li').each(function(index, element) {
+                if ($(this).attr('data-option') == value) {
+                    $(this).parent().parent().siblings('div.zxma-model-select-text').text($(this).text()).attr('data-value', $(this).attr('data-option'));
+                    $(this).addClass('selected data-selected').siblings('li').removeClass('selected data-selected');
+                }
+            });
+        }
+
+        function zxma_requestRemoteGet() {
+            zxma_initRemoteType("mqtt");
+            postAjaxHttpRequst('/action/remote_manage_get', null, function(res) {
+                if (res && res.state) {
+                    zxma_initRemoteEnable(res.data.remote_enable);
+                    //                zxma_initRemoteType(res.data.remote_type);
+                    zxma_initRemoteUrl(res.data.mq_url);
+                    zxma_initRemotePort(res.data.mq_port);
+                    zxma_initRemoteCID(res.data.mq_cid);
+                    zxma_initRemoteUser(res.data.mq_usr);
+                    zxma_initRemotePswd(res.data.mq_pwd);
+                }
+            })
+        }
+
+        function zxma_requestRemoteSet(data) {
+            startLoading(null)
+            postAjaxHttpRequst('/action/remote_manage_set', data, function(res) {
+                closeLoading(res);
+                zxma_requestRemoteGet();
+            })
+        }
+
+        function zxma_initEnable_firewall(value) {
+            if (1 == value) {
+                $('#enable_firewall').attr('checked', 'checked');
+            } else {
+                $('#enable_firewall').removeAttr('checked');
+            }
+        }
+
+        function zxma_requestFireGet() {
+            postAjaxHttpRequst('/action/adv_firewall_get', null, function(res) {
+                if (res && res.state) {
+                    zxma_initEnable_firewall(res.data.firewall_enable);
+                }
+            })
+        }
+
+        function zxma_requestFireFireWallSwitch(enable) {
+            $('#msg_info').text("设置中(Loading)");
+            $('#mask').css("display", 'block')
+            $('#model').css("display", 'block')
+            var data = {
+                firewall_enable: enable
+            }
+            postAjaxHttpRequst('/action/adv_firewall_set', data, function(res) {
+                if (res && res.state) {
+                    $('#msg_info').text("成功(Success)");
+                    zxma_requestFireGet();
+                    setTimeout(function() {
+                        $('#mask').css("display", 'none')
+                        $('#model').css("display", 'none')
+                    }, 1000)
+                }
+            })
+        }
+
+        function zxma_requestFireDosSwitch(enable) {
+            $('#msg_info').text("设置中(Loading)");
+            $('#mask').css("display", 'block')
+            $('#model').css("display", 'block')
+            var data = {
+                dos_enable: enable
+            }
+            postAjaxHttpRequst('/action/setting_dosswitch', data, function(res) {
+                if (res && res.state) {
+                    $('#msg_info').text("成功(Success)");
+                    zxma_requestFireGet();
+                    setTimeout(function() {
+                        $('#mask').css("display", 'none')
+                        $('#model').css("display", 'none')
+                    }, 1000)
+                }
+            })
+        }
+
+        function zxma_initDmzEnable(value) {
+            if ("1" == value) {
+                $('#enable_dmz').attr('checked', 'checked');
+                $("#switch_dmz").removeClass("zxma-hide").addClass("zxma-show");
+            } else {
+                $('#enable_dmz').removeAttr('checked');
+                $("#switch_dmz").removeClass("zxma-show").addClass("zxma-hide");
+            }
+        }
+
+        function zxma_initDmzDestIp(option) {
+            var dmz_ip = $('.zxma-model-select-content ul.zxma-model-select-option', $("#dmz_ip").parent());
+            dmz_ip.find('li').each(function(index, element) {
+                if ($(this).attr('data-option') == option) {
+                    $(this).parent().parent().siblings('div.zxma-model-select-text').text($(this).text()).attr('data-value', $(this).attr('data-option'));
+                    $(this).addClass('selected data-selected').siblings('li').removeClass('selected data-selected');
+                    return;
+                }
+            });
+        }
+
+        function zxma_requestDmzGet() {
+            postAjaxHttpRequst('/action/adv_dmz_get', null, function(res) {
+                if (res && res.state) {
+                    zxma_initDmzEnable(res.data.enable);
+                    if (res.data.dmz_ip) {
+                        zxma_initDmzDestIp(res.data.dmz_ip);
+                    }
+                }
+            })
+        }
+
+        function zxma_requestDmzSet(data) {
+            startLoading(null)
+            postAjaxHttpRequst('/action/adv_dmz_set', data, function(res) {
+                closeLoading(res);
+                zxma_requestDmzGet();
+            })
+        }
+
+        function zxma_requestDmzHostList() {
+            postAjaxHttpRequst('/action/setting_terminalshost', null, function(res) {
+                if (res && res.state) {
+                    var listOption = res.data;
+                    var content = "";
+                    $.each(listOption, function(index, item) {
+                        content += "<li data-option='" + item.dmz_ip + "' onclick='zxma_dmzList(this)'>" + item.dmz_ip + "</li>";
+                    });
+                    $("#dmz_options").empty();
+                    $("#dmz_options").append(content);
+                    var content_ip_options = "";
+                    $.each(listOption, function(index, item) {
+                        content_ip_options += "<li data-option='" + item.mac + "' onclick='zxma_portForwardList(this)'>" + item.dmz_ip + "</li>";
+                    });
+                    $("#forward_ip_options").empty();
+                    $("#forward_ip_options").append(content_ip_options);
+                }
+            })
+        }
+
+        function zxma_dmzList(node) {
+            var sel_node = $(node);
+            sel_node.parent().parent().siblings('div.zxma-model-select-text').text(sel_node.text()).attr('data-value', sel_node.attr('data-option'));
+            sel_node.addClass('selected data-selected').siblings('li').removeClass('selected data-selected');
+        }
+
+        function zxma_requestTimeGet() {
+            postAjaxHttpRequst('/action/adv_time_get', null, function(res) {
+                if (res && res.state) {
+                    var timezone = $('.zxma-model-select-content ul.zxma-model-select-option', $("#time_timezone").parent());
+                    timezone.find('li').each(function(index, element) {
+                        if ($(this).attr('data-option') == res.data["timezone"]) {
+                            $(this).parent().parent().siblings('div.zxma-model-select-text').text($(this).text()).attr('data-value', $(this).attr('data-option'));
+                            $(this).addClass('selected data-selected').siblings('li').removeClass('selected data-selected');
+                            return;
+                        }
+                    });
+
+                    if ("1" == res.data["ntp_enable"]) {
+                        $('#ntp_enable').attr('checked', 'checked');
+                        $("#display_ntp_server").removeClass("zxma-hide").addClass("zxma-show");
+                        $("#display_manual_time").removeClass("zxma-show").addClass("zxma-hide");
+                    } else {
+                        $('#ntp_enable').removeAttr('checked');
+                        $("#display_ntp_server").removeClass("zxma-show").addClass("zxma-hide");
+                        $("#display_manual_time").removeClass("zxma-hide").addClass("zxma-show");
+                    }
+                    $("#ntp_server0").val(res.data["ntp_server0"]);
+                    $("#ntp_server1").val(res.data["ntp_server1"]);
+                    $("#ntp_server2").val(res.data["ntp_server2"]);
+                    $("#ntp_server3").val(res.data["ntp_server3"]);
+                }
+            })
+        }
+
+        function zxma_requestTimeSet(data) {
+            startLoading(null)
+            postAjaxHttpRequst('/action/adv_time_set', data, function(res) {
+                closeLoading(res);
+                zxma_requestTimeGet();
+            })
+        }
+
+        function zxma_systemReset() {
+            zxma_requestSystemReset();
+        }
+
+        function zxma_systemRestart() {
+            zxma_requestSystemRestart();
+        }
+
+        function zxma_systemUpgrade() {
+            zxma_requestSystemUpgrade();
+        }
+
+        function mobile_nr_bandwidth_switch(code) {
+            var ret
+            switch (code) {
+                case "0":
+                    ret = "5 MHz";
+                    break;
+                case "1":
+                    ret = "10 MHz";
+                    break;
+                case "2":
+                    ret = "15 MHz";
+                    break;
+                case "3":
+                    ret = "20 MHz";
+                    break;
+                case "4":
+                    ret = "25 MHz";
+                    break;
+                case "5":
+                    ret = "30 MHz";
+                    break;
+                case "6":
+                    ret = "40 MHz";
+                    break;
+                case "7":
+                    ret = "50 MHz";
+                    break;
+                case "8":
+                    ret = "60 MHz";
+                    break;
+                case "9":
+                    ret = "70 MHz";
+                    break;
+                case "10":
+                    ret = "80 MHz";
+                    break;
+                case "11":
+                    ret = "90 MHz";
+                    break;
+                case "12":
+                    ret = "100 MHz";
+                    break;
+                case "13":
+                    ret = "200 MHz";
+                    break;
+                case "14":
+                    ret = "400 MHz";
+                    break;
+                default:
+                    ret = "-";
+                    break;
+            }
+            return ret;
+        }
+
+        function mobile_lte_bandwidth_switch(code) {
+            var ret
+            switch (code) {
+                case "0":
+                    ret = "1.4 MHz";
+                    break;
+                case "1":
+                    ret = "3 MHz";
+                    break;
+                case "2":
+                    ret = "5 MHz";
+                    break;
+                case "3":
+                    ret = "10 MHz";
+                    break;
+                case "4":
+                    ret = "15 MHz";
+                    break;
+                case "5":
+                    ret = "20MHz";
+                    break;
+                default:
+                    ret = "-";
+                    break;
+            }
+            return ret;
+        }
+
+        function zxma_requestMobileInfo() {
+            postAjaxHttpRequst('/action/mobile_status', null, function(res) {
+                if (res && res.state) {
+                    if (res.data.type) {
+                        if (res.data.type == "NR5G-SA") {
+                            $("#mb_sa_type").html(res.data.type);
+
+                            $("#mobile_5g_sa").removeClass("zxma-hide").addClass("zxma-show");
+                            if (res.data.cellID) {
+                                $("#mb_sa_cellID").html(res.data.cellID);
+                            }
+                            if (res.data.band) {
+                                $("#mb_sa_band").html(res.data.band);
+                            }
+                            if (res.data.RSRP) {
+                                $("#mb_sa_RSRP").html(res.data.RSRP);
+                            }
+                            if (res.data.RSRQ) {
+                                $("#mb_sa_RSRQ").html(res.data.RSRQ);
+                            }
+                            if (res.data.SINR) {
+                                $("#mb_sa_SINR").html(res.data.SINR);
+                            }
+                            if (res.data.TAC) {
+                                $("#mb_sa_TAC").html(res.data.TAC);
+                            }
+                            if (res.data.dl_bw) {
+                                $("#mb_sa_dl_bw").html(mobile_nr_bandwidth_switch(res.data.dl_bw));
+                            }
+                            if (res.data.FNN) {
+                                $("#mb_sa_FNN").html(res.data.FNN);
+                            }
+                            if (res.data.SNN) {
+                                $("#mb_sa_SNN").html(res.data.SNN);
+                            }
+                            if (res.data.RPLMN) {
+                                $("#mb_sa_RPLMN").html(res.data.RPLMN);
+                            }
+                        }
+                        if (res.data.type == "LTE") {
+                            $("#mb_lte_type").html(res.data.type);
+                            $("#mobile_lte").removeClass("zxma-hide").addClass("zxma-show");
+                            if (res.data.is_tdd) {
+                                $("#mb_lte_is_tdd").html(res.data.is_tdd);
+                            }
+                            if (res.data.cellID) {
+                                $("#mb_lte_cellID").html(res.data.cellID);
+                            }
+                            if (res.data.PCID) {
+                                $("#mb_lte_pcid").html(res.data.PCID);
+                            }
+                            if (res.data.TAC) {
+                                $("#mb_lte_tac").html(res.data.TAC);
+                            }
+                            if (res.data.ul_bw) {
+                                $("#mb_lte_ul_bw").html(mobile_lte_bandwidth_switch(res.data.ul_bw));
+                            }
+                            if (res.data.dl_bw) {
+                                $("#mb_lte_dl_bw").html(mobile_lte_bandwidth_switch(res.data.dl_bw));
+                            }
+                            if (res.data.RSRP) {
+                                $("#mb_lte_RSRP").html(res.data.RSRP);
+                            }
+                            if (res.data.RSRQ) {
+                                $("#mb_lte_RSRQ").html(res.data.RSRQ);
+                            }
+                            if (res.data.SINR) {
+                                $("#mb_lte_SINR").html(res.data.SINR);
+                            }
+                            if (res.data.RSSI) {
+                                $("#mb_lte_RSSI").html(res.data.RSSI);
+                            }
+                            if (res.data.CQI) {
+                                $("#mb_lte_CQI").html(res.data.CQI);
+                            }
+                            if (res.data.tx_power) {
+                                $("#mb_lte_tx_power").html(res.data.tx_power);
+                            }
+                            if (res.data.FNN) {
+                                $("#mb_lte_FNN").html(res.data.FNN);
+                            }
+                            if (res.data.SNN) {
+                                $("#mb_lte_SNN").html(res.data.SNN);
+                            }
+                            if (res.data.RPLMN) {
+                                $("#mb_lte_RPLMN").html(res.data.RPLMN);
+                            }
+                        }
+                    }
+                }
+
+                zxma_setIframeHeight("zxma_fixed");
+            })
+        }
+
+        function zxma_requestSystemDeviceInfo() {
+            postAjaxHttpRequst('/action/adv_dev_info', null, function(res) {
+                if (res && res.state) {
+                    if (res.data.device_name) {
+                        $("#device_name").html(res.data.device_name);
+                    }
+                    if (res.data.hard_ver) {
+                        $("#hard_ver").html(res.data.hard_ver);
+                    }
+                    if (res.data.fw_version) {
+                        $("#fw_version").html(res.data.fw_version);
+                    }
+                    if (res.data.webui_ver) {
+                        $("#webui_ver").html(res.data.webui_ver);
+                    }
+                    if (res.data.lan_mac) {
+                        $("#lan_mac").html(res.data.lan_mac);
+                    }
+                    /*
+                    if(res.data.ip_wan){
+                        $("#wanip").html(res.data.ip_wan);
+                    }
+                    */
+                }
+            })
+        }
+
+        function zxma_requestSystemModifyPwd(data) {
+            $('#msg_info').text("设置中(Loading)");
+            $('#mask').css("display", 'block')
+            $('#model').css("display", 'block')
+            postAjaxHttpRequst('/action/setting_systemmodifypwd', data, function(res) {
+                if (res && res.state) {
+                    $('#msg_info').text("成功(Success)");
+                    setTimeout(function() {
+                        $('#mask').css("display", 'none')
+                        $('#model').css("display", 'none')
+                    }, 1000)
+                }
+            })
+        }
+
+        function zxma_requestSystemRestart() {
+            $('#msg_info').text("设置中(Loading)");
+            $('#mask').css("display", 'block')
+            $('#model').css("display", 'block')
+            postAjaxHttpRequst('/action/adv_sys_restart', null, function(res) {
+                if (res && res.state) {
+                    $('#msg_info').text("成功(Success)");
+                    setTimeout(function() {
+                        $('#mask').css("display", 'none')
+                        $('#model').css("display", 'none')
+                    }, 1000)
+                }
+            })
+        }
+
+        function zxma_requestSystemReset() {
+            $('#msg_info').text("设置中(Loading)");
+            $('#mask').css("display", 'block')
+            $('#model').css("display", 'block')
+            postAjaxHttpRequst('/action/adv_sys_factory', null, function(res) {
+                if (res && res.state) {}
+            })
+            $('#msg_info').text("成功(Success)");
+            setTimeout(function() {
+                $('#mask').css("display", 'none')
+                $('#model').css("display", 'none')
+            }, 1000)
+        }
+
+        function zxma_requestSystemUpgrade() {
+            $('#msg_info').text("设置中(Loading)");
+            $('#mask').css("display", 'block')
+            $('#model').css("display", 'block')
+            postAjaxHttpRequst('/action/setting_systemupgrade', null, function(res) {
+                if (res && res.state) {}
+            })
+            $('#msg_info').text("成功(Success)");
+            setTimeout(function() {
+                $('#mask').css("display", 'none')
+                $('#model').css("display", 'none')
+            }, 1000)
+        }
+
+        function openMenu(obj) {
+            menuTitleId = obj.id;
+            menuId = "menu" + menuTitleId.substring(10);
+            indicatorId = "indicator" + menuTitleId.substring(10);
+
+            menu = document.getElementById(menuId);
+            indicator = document.getElementById(indicatorId);
+            height = menu.style.height;
+
+            if (height == "0px" || height == "") {
+                childAmount = menu.getElementsByTagName('div').length;
+                dividerAmount = menu.getElementsByTagName('li').length;
+                height = childAmount * itemHeight + dividerAmount * dividerHeight;
+                menu.style.height = height + "px";
+                //            indicator.style.transform = "rotate(180deg)";
+            } else {
+                menu.style.height = "0px";
+                //            indicator.style.transform = "rotate(0deg)";
+            }
+
+            zxma_setIframeHeight("zxma_setting")
+        }
+
+        function pointMenu(value) {
+            document.getElementById("setting-security-firewall").style.display = "none";
+            document.getElementById("setting-security-dmz").style.display = "none";
+            document.getElementById("setting-security-remote").style.display = "none";
+            document.getElementById("setting-security-portforward").style.display = "none";
+            document.getElementById("setting-system-deviceinfo").style.display = "none";
+            document.getElementById("setting-system-restart").style.display = "none";
+            document.getElementById("setting-system-changepwd").style.display = "none";
+            document.getElementById("setting-system-reset").style.display = "none";
+            document.getElementById("setting-system-upgrade").style.display = "none";
+            document.getElementById("setting-system-time").style.display = "none";
+            document.getElementById(value).style.display = "block";
+            zxma_setIframeHeight("zxma_setting")
+        }
+
+        function setContentHeight() {
+            var window_width = $(window).width();
+            console.log(window_width)
+            var window_height = $(window).height();
+            console.log(window_height)
+            var h = window_height - 140;
+            if (400 < h) {
+                $("#content-fixed").height(window_height - 140)
+            }
+        }
+
+        function setPoint() {
+            var query = window.location.search;
+            var url = decodeURI(decodeURI(window.location.search));
+            var str = location.href;
+            var num = str.indexOf("#");
+            if (num < 0) {
+                window.location.href = "index.html";
+                return;
+            }
+            // $("html,body").animate({ "scrollTop" : 0 }, 10);
+            str = str.substr(num + 1);
+            document.getElementById(str).style.display = "block";
+        }
+
+        function zxma_selectModel() {
+            var $box = $('div.zxma-model-select');
+            var $content = $('.zxma-model-select-content', $box);
+            var $option = $('.zxma-model-select-content ul.zxma-model-select-option', $box);
+            var $txt = $('div.zxma-model-select-text', $box);
+            var speed = 10;
+
+            $txt.on('click', function() {
+                var $self = $(this);
+                //console.log($self)
+                $content.not($self).siblings('.zxma-model-select-content').slideUp(speed, function() {
+                    init($self);
+                });
+                $self.siblings('.zxma-model-select-content').slideToggle(speed, function() {
+                    init($self);
+                });
+                return false;
+            });
+
+            $option.find('li').each(function(index, element) {
+                var $self = $(this);
+                if ($self.hasClass('selected')) {
+                    $self.addClass('data-selected');
+                }
+            }).mousedown(function() {
+                $(this).parent().parent().siblings('div.zxma-model-select-text').text($(this).text()).attr('data-value', $(this).attr('data-option'));
+                $content.slideUp(speed, function() {
+                    init($(this));
+                });
+                $(this).addClass('selected data-selected').siblings('li').removeClass('selected data-selected');
+                return false;
+            }).mouseover(function() {
+                $(this).addClass('selected').siblings('li').removeClass('selected');
+            });
+
+            $(document).on('click', function() {
+                var $self = $(this);
+                $content.slideUp(speed, function() {
+                    init($self);
+                })
+            });
+
+            function init(obj) {
+                obj.find('li.data-selected').addClass('selected').siblings('li').removeClass('selected');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
